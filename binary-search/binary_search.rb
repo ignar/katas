@@ -1,33 +1,31 @@
 require "minitest/autorun"
 
+# Chop Kata
+# http://codekata.com/kata/kata02-karate-chop/
+#
 def chop(int, array)
-  binary_search(int, array, 0)
+  binary_search(int, array, 0, array.length)
 end
 
-def binary_search(int, array, start_index)
+def binary_search(int, array, start_index, end_index)
   return -1 if array.length == 0
   return -1 if int < array.first
   return -1 if int > array.last
 
-  if array.length == 1
-    if int == array.first
-      start_index
-    else
-      -1
-    end
-  else
-    mindex = Integer(array.length / 2)
-    left = binary_search(int, array.slice(0, mindex), start_index)
-    right = binary_search(int, array.slice(mindex, array.length), mindex + start_index)
-
-    if left != -1
-      left
-    elsif right != -1
-      right
-    else
-      -1
-    end
+  if 1 == (end_index - start_index)
+    return array[start_index] == int ? start_index : -1
   end
+
+  mindex = Integer((start_index + end_index) / 2)
+  if array[mindex] == int
+    return mindex
+  elsif int < array[mindex]
+    start_index, end_index = start_index, mindex
+  else
+    start_index, end_index = mindex, end_index
+  end
+
+  binary_search(int, array, start_index, end_index)
 end
 
 class DoTest < Minitest::Test
