@@ -1,5 +1,4 @@
 language: ruby
 rvm:
-  - 2.2
-script:
-  - ruby -Ilib:test */*
+  - 2.5
+install: bundle install --jobs=3 --retry=3
