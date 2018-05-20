@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-def insert_search(input, direction = :asc)
+def insert_sort(input, direction = :asc)
   array = input.clone
   array[1...array.length].each_with_index do |item, index|
     index += 1
@@ -24,25 +24,25 @@ def compare(el1, el2, comparator)
   end
 end
 
-class InsertSearchTest < MiniTest::Test
-  def test_insert_search_asc_by_default
-    assert_equal [1, 2, 3], insert_search([2, 1, 3]), 'sorts asc by default'
+class InsertSortTest < MiniTest::Test
+  def test_insert_sort_asc_by_default
+    assert_equal [1, 2, 3], insert_sort([2, 1, 3]), 'sorts asc by default'
   end
 
-  def test_insert_search_asc
-    assert_equal [1, 2], insert_search([2, 1], :asc)
-    assert_equal [1, 2, 3], insert_search([2, 1, 3], :asc)
-    assert_equal [-2, 0, 1, 3], insert_search([1, -2, 0, 3], :asc)
+  def test_insert_sort_asc
+    assert_equal [1, 2], insert_sort([2, 1], :asc)
+    assert_equal [1, 2, 3], insert_sort([2, 1, 3], :asc)
+    assert_equal [-2, 0, 1, 3], insert_sort([1, -2, 0, 3], :asc)
   end
 
-  def test_insert_search_desc
-    assert_equal [2, 1], insert_search([1, 2], :desc)
-    assert_equal [3, 2, 1], insert_search([2, 1, 3], :desc)
+  def test_insert_sort_desc
+    assert_equal [2, 1], insert_sort([1, 2], :desc)
+    assert_equal [3, 2, 1], insert_sort([2, 1, 3], :desc)
   end
 
   def test_immutable
     array = [2, 1, 3]
-    insert_search(array)
+    insert_sort(array)
     assert_equal array, [2, 1, 3], 'does not modify initial data'
   end
 end
