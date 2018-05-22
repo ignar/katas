@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module MergeSort
+module Sort
   module Merge
     def merge(left, right)
       return [] if left.empty? && right.empty?

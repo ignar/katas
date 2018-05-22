@@ -3,9 +3,9 @@
 require_relative 'merge'
 require_relative 'merge_sort'
 
-require 'no-kata_insertion-sort/insertion_sort'
+require 'sort/insertion_sort'
 
-module MergeSort
+module Sort
   class MergeSortWithInsertionSort
     include Merge
 
@@ -17,7 +17,7 @@ module MergeSort
 
     def merge_sort(array)
       if array.length > 2 && array.length <= leave_min_length
-        InsertionSort::InsertionSort.new.insertion_sort(array)
+        Sort::InsertionSort.new.insertion_sort(array)
       else
         MergeSort.new.merge_sort(array)
       end

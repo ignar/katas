@@ -2,7 +2,7 @@
 
 require_relative 'merge'
 
-module MergeSort
+module Sort
   class MergeSort
     include Merge
 

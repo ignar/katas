@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-module MergeSort
+module Sort
   class MergeSortTest < MiniTest::Test
     def subject_class
       MergeSort

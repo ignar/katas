@@ -3,7 +3,7 @@
 require 'test_helper'
 require 'benchmark'
 
-module MergeSort
+module Sort
   class MergeSortVsMergeInsertionSortTest < MiniTest::Test
     def random_numbers(size = 10)
       result = []

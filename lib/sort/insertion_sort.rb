@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module InsertionSort
+module Sort
   class InsertionSort
     def insertion_sort(input, direction = :asc)
       return input if input.length <= 1

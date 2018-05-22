@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-module InsertionSort
+module Sort
   class InsertionSortTest < MiniTest::Test
     def subject_class
       InsertionSort
