@@ -10,4 +10,5 @@ end
 
 group :test do
   gem 'minitest', '~> 5.11.3'
+  gem 'minitest-reporters'
 end
